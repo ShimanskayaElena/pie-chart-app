@@ -1,4 +1,6 @@
-# PieChartApp
+# Pie Chart App
+
+The demo version of this application can be seen from the link - https://shimanskayaelena.github.io/pie-chart-app/
 
 TEST
 
