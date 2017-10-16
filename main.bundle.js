@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Pie Chart Update</h1>\n<p>Click the radio button to change the data displayed in the chart</p>\n<form (change)=\"selectFruit($event)\">\n    <label><input type=\"radio\" name=\"dataset\" value=\"apples\" checked>Apples</label>\n    <label><input type=\"radio\" name=\"dataset\" value=\"oranges\">Oranges</label>\n</form>\n<app-pie-chart [selectedFruit]=\"fruit\"></app-pie-chart>\n"
+module.exports = "<h1>Pie Chart Update</h1>\n<div>\n    <p>Click the radio button to change the data displayed in the chart:</p>\n\n    <mat-radio-group (change)=\"selectFruit($event)\"> \n        <mat-radio-button value=\"apples\" name=\"dataset\" checked=\"true\" labelPosition=\"before\">Apples</mat-radio-button> \n        <mat-radio-button value=\"oranges\" name=\"dataset\" labelPosition=\"before\">Oranges</mat-radio-button> \n    </mat-radio-group>\n</div>\n\n<!--<form (change)=\"selectFruit($event)\">\n    <label><input type=\"radio\" name=\"dataset\" value=\"apples\" checked>Apples</label>\n    <label><input type=\"radio\" name=\"dataset\" value=\"oranges\">Oranges</label>\n</form>-->\n\n<app-pie-chart [selectedFruit]=\"fruit\"></app-pie-chart>\n"
 
 /***/ }),
 
@@ -57,12 +57,13 @@ var AppComponent = (function () {
     }
     // determine the data that we will send to the child component
     AppComponent.prototype.selectFruit = function (event) {
-        this.fruit = event.target.value;
+        // this.fruit = (<HTMLInputElement>event.target).value;
+        this.fruit = event.value;
     };
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_3" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -80,8 +81,10 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pie_chart_pie_chart_component__ = __webpack_require__("../../../../../src/app/pie-chart/pie-chart.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pie_chart_pie_chart_component__ = __webpack_require__("../../../../../src/app/pie-chart/pie-chart.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -89,6 +92,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -102,15 +107,17 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_4__pie_chart_pie_chart_component__["a" /* PieChartComponent */]
+            __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__pie_chart_pie_chart_component__["a" /* PieChartComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */]
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["a" /* MatRadioModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]
         ],
         providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -224,11 +231,11 @@ var PieChartComponent = (function () {
     return PieChartComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Input */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
     __metadata("design:type", String)
 ], PieChartComponent.prototype, "selectedFruit", void 0);
 PieChartComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_3" /* Component */])({
         selector: 'app-pie-chart',
         template: __webpack_require__("../../../../../src/app/pie-chart/pie-chart.component.html"),
         styles: [__webpack_require__("../../../../../src/app/pie-chart/pie-chart.component.css")]
