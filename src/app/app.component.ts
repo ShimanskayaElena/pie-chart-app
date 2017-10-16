@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm} from '@angular/forms';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,6 +12,7 @@ export class AppComponent {
 
   // determine the data that we will send to the child component
   selectFruit (event: any) {
-    this.fruit = (<HTMLInputElement>event.target).value;
+    // this.fruit = (<HTMLInputElement>event.target).value;
+    this.fruit = event.value;
   }
 }

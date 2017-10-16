@@ -4,7 +4,7 @@ The demo version of this application can be seen from the link - https://shimans
 
 TEST
 
-It was necessary to make a schedule, an analogous one with - https://bl.ocks.org/mbostock/1346395  the help Angular 4 and d3.js v.4
+It was necessary to make a schedule, an analogous one with - https://bl.ocks.org/mbostock/1346395  the help Angular 4, Angular Material (2) and d3.js v.4.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
 

@@ -1,7 +1,16 @@
 <h1>Pie Chart Update</h1>
-<p>Click the radio button to change the data displayed in the chart</p>
-<form (change)="selectFruit($event)">
+<div>
+    <p>Click the radio button to change the data displayed in the chart:</p>
+
+    <mat-radio-group (change)="selectFruit($event)"> 
+        <mat-radio-button value="apples" name="dataset" checked="true" labelPosition="before">Apples</mat-radio-button> 
+        <mat-radio-button value="oranges" name="dataset" labelPosition="before">Oranges</mat-radio-button> 
+    </mat-radio-group>
+</div>
+
+<!--<form (change)="selectFruit($event)">
     <label><input type="radio" name="dataset" value="apples" checked>Apples</label>
     <label><input type="radio" name="dataset" value="oranges">Oranges</label>
-</form>
+</form>-->
+
 <app-pie-chart [selectedFruit]="fruit"></app-pie-chart>
